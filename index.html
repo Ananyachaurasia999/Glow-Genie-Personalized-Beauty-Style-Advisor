@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlowMuse Global Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>GlowMuse Global Beauty Insights</h1>
+    <p>Unlock your personalized skincare with intelligent style charts.</p>
+  </header>
+
+  <main>
+    <section class="chart-section">
+      <h2>Skincare Data Overview</h2>
+      <canvas id="globalChart"></canvas>
+    </section>
+
+    <section class="info-cards">
+      <div class="card">
+        <h3>Most Common Skin Type</h3>
+        <p>Combination</p>
+      </div>
+      <div class="card">
+        <h3>Popular Region</h3>
+        <p>Asia & USA</p>
+      </div>
+      <div class="card">
+        <h3>Top Concern</h3>
+        <p>Acne & Pigmentation</p>
+      </div>
+    </section>
+<div class="style-tip-box">
+  <p><strong>“Confused about what suits you? <span class="highlight">I’ve already figured it out.</span>”</strong></p>
+</div>
+    <section class="action">
+      <button id="analyzeBtn">Refresh Analysis</button>
+    </section>
+  </main>
+<section class="action">
+<button id="advisorBtn">Here is Your 7-Step Advisor</button>
+</section>
+<br>
+<h2>GlowMuse: Your Personalized Fashion & Beauty Advisor</h2>
+<p>Let’s get to know you better to personalize your style experience.</p>
+<br>
+<h3>Step 1: Basic Details</h3>
+<br>
+<label>1. What's your name?</label>
+<input type="text" placeholder="Enter your name" required>
+<br>
+<label>2. Choose your gender:</label>
+<select>
+  <option value="">Select</option>
+  <option>Male</option>
+  <option>Female</option>
+  <option>Prefer not to say</option>
+</select>
+<br>
+<br>
+<h3>Step 2: Skin & Body Type</h3>
+<br>
+<label>3. What's your skin type?</label>
+<select>
+  <option value="">Select</option>
+  <option>Oily</option>
+  <option>Dry</option>
+  <option>Combination</option>
+  <option>Sensitive</option>
+</select>
+<br>
+<label>4. What's your skin tone?</label>
+<select>
+  <option value="">Select</option>
+  <option>Fair</option>
+  <option>Wheatish</option>
+  <option>Dusky</option>
+  <option>Dark</option>
+</select>
+<br>
+<label>5. What is your body shape?</label>
+<select>
+  <option value="">Select</option>
+  <option>Hourglass</option>
+  <option>Pear</option>
+  <option>Rectangle</option>
+  <option>Apple</option>
+</select>
+<br>
+<br>
+<h3>Step 3: Face, Hair & Features</h3>
+<br>
+<label>6. What is your face shape?</label>
+<select>
+  <option value="">Select</option>
+  <option>Oval</option>
+  <option>Round</option>
+  <option>Heart</option>
+  <option>Square</option>
+</select>
+<br>
+<label>7. What's your hair type?</label>
+<select>
+  <option value="">Select</option>
+  <option>Straight</option>
+  <option>Wavy</option>
+  <option>Curly</option>
+  <option>Coily</option>
+</select>
+<br>
+<label>8. What's your hair color?</label>
+<input type="text" placeholder="e.g., Black, Brown, Blonde">
+<br>
+<label>9. Do you wear glasses?</label>
+<select>
+  <option value="">Select</option>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br>
+<br>
+<h3>Step 4: Personal Choices</h3>
+<br>
+<label>10. What’s your dressing style?</label>
+<select>
+  <option>Traditional</option>
+  <option>Modern</option>
+  <option>Casual</option>
+  <option>Mix</option>
+</select>
+<br>
+<label>11. What’s your preferred footwear?</label>
+<input type="text" placeholder="e.g., Sneakers, Heels, Flats">
+<br>
+<label>12. Favourite color to wear?</label>
+<input type="text" placeholder="e.g., Pink, Black, Blue">
+<br>
+<br>
+<h3>Step 5: Lifestyle & Skin Concerns</h3>
+<br>
+<label>13. Do you have any skin allergies?</label>
+<select>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br>
+<label>14. Are you comfortable using skincare products?</label>
+<select>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br>
+<label>15. Do you follow any skincare routine?</label>
+<select>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br>
+<label>16. How many hours do you sleep?</label>
+<input type="number" min="1" max="24">
+<br>
+<br>
+<h3>Step 6: Measurement & Styling
+</h3>
+<br>
+<label>17. What's your height? (in cm)</label>
+<input type="number">
+<br>
+<label>18. What's your weight? (in kg)</label>
+<input type="number">
+<br>
+<label>19. Ring size (optional):</label>
+<input type="text" placeholder="if known">
+<br>
+<label>20. Bangle size (optional):</label>
+<input type="text" placeholder="if known">
+<br>
+<label>21. Shoe size:</label>
+<input type="text" placeholder="e.g., UK 6, US 8">
+<br>
+<label>22. Do you wear makeup?</label>
+<select>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+<br>
+<label>23. What kind of makeup look do you prefer?</label>
+<select>
+  <option>Natural</option>
+  <option>Glam</option>
+  <option>Bold</option>
+  <option>No preference</option>
+</select>
+<br>
+<label>24. What’s your biggest styling problem?</label>
+<input type="text" placeholder="e.g., Matching accessories, Right colors">
+<br>
+  <br>
+  <div class="question">
+  <h3>Step 7:💧 Hair Porosity Water Test</h3>
+  <p>🧪 Drop a clean strand of your hair into a glass of water. What happens?</p>
+
+  <form>
+    <label>
+      <input type="radio" name="porosity" value="low" onclick="showPorosityResult('low')">
+      It floats on top of the water
+    </label><br>
+
+    <label>
+      <input type="radio" name="porosity" value="medium" onclick="showPorosityResult('medium')">
+      It sinks slowly in the middle
+    </label><br>
+
+    <label>
+      <input type="radio" name="porosity" value="high" onclick="showPorosityResult('high')">
+      It sinks quickly to the bottom
+    </label>
+  </form>
+
+  <div id="porosityResult" style="margin-top:10px; font-weight: bold;"></div>
+</div>
+
+<script>
+  function showPorosityResult(type) {
+    let result = "";
+
+    if (type === "low") {
+      result = "🟡 Low Porosity: Use lightweight oils like Argan or Grapeseed oil.";
+    } else if (type === "medium") {
+      result = "🟢 Medium Porosity: Use Jojoba or Almond oil. You have balanced hair!";
+    } else if (type === "high") {
+      result = "🔴 High Porosity: Use heavier oils like Castor or Coconut oil.";
+    }
+
+    document.getElementById("porosityResult").innerText = result;
+  }
+</script>
+
+<br>
+
+<div  
+.scent-test {
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  font-family: 'Poppins', sans-serif;
+}
+
+.scent-test h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #c71585;
+  font-family: 'Dancing Script', cursive;
+}
+
+.scent-test .intro {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.test-steps p, .test-steps ul {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.test-steps ul {
+  padding-left: 20px;
+}
+
+.highlight.floral {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.highlight.earthy {
+  color: #8b4513;
+  font-weight: bold;
+}
+
+.perfume-table {
+  margin-top: 25px;
+}
+
+.perfume-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.perfume-table th,
+.perfume-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.perfume-table th {
+  background-color: #fce4ec;
+  color: #880e4f;
+}
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
+  
+<section class="scent-test">
+  <h3> - 🌸 Hand-Rub Scent Test</h3>
+  <p class="intro">Find your perfect perfume by testing your skin’s natural chemistry!</p>
+
+  <div class="test-steps">
+    <p> <strong>Step:</strong> Rub your palms together gently for 5–10 seconds.</p>
+    <p> <strong>Now smell your hands:</strong></p>
+    <ul>
+      <li><strong>If it smells floral/sweet:</strong> Go for <span class="highlight floral">Floral, Fruity, or Powdery perfumes</span>.</li>
+      <li><strong>If it smells eggy/sour:</strong> Choose <span class="highlight earthy">Woody, Musky, or Spicy perfumes</span>.</li>
+    </ul>
+  </div>
+
+  <div class="perfume-table">
+    <h3>Perfume Guide Based on Your Natural Scent</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Hand Smell</th>
+          <th>Recommended Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🌸 Floral/Sweet</td>
+          <td>Rose, Jasmine, Vanilla, Citrus, Berries</td>
+        </tr>
+        <tr>
+          <td>🥚 Sharp/Eggy</td>
+          <td>Oud, Sandalwood, Musk, Amber, Patchouli</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section> 
+<br>
+
+<hr>
+<br>
+<div style="background-color: #cc7351; color: white; padding: 20px; border-radius: 12px; max-width: 700px; margin: auto; font-family: Arial;">
+  <h3 style="text-align:center;">✨ GlowMuse DIY Tips ✨</h3>
+<br>
+  <details style="margin-bottom: 10px;">
+    <summary><strong>💆‍♀️ How to Identify Your Skin Type</strong></summary>
+    <ul>
+      <li>Wash your face and wait 1 hour without applying anything.</li>
+      <li>If skin feels tight – it's dry. If it looks shiny – it's oily. Mix = combination.</li>
+      <li>Tip: Use blotting paper – press on T-zone to check oil.</li>
+    </ul>
+  </details>
+
+  <details style="margin-bottom: 10px;">
+    <summary><strong>🎨 How to Know Your Skin Tone</strong></summary>
+    <ul>
+      <li>Check your veins under natural light:</li>
+      <li>Green veins = warm tone, Blue = cool tone, Both = neutral.</li>
+      <li>Tip: Gold jewelry suits warm; Silver suits cool.</li>
+    </ul>
+  </details>
+
+  <details style="margin-bottom: 10px;">
+    <summary><strong>👗 How to Know Your Body Shape</strong></summary>
+    <ul>
+      <li>Measure shoulders, bust, waist, and hips.</li>
+      <li>Hourglass: Balanced bust & hips, smaller waist.</li>
+      <li>Pear: Hips wider than bust. Apple: Broader upper body.</li>
+      <li>Tip: Use string or measuring tape to compare proportions.</li>
+    </ul>
+  </details>
+
+  <details style="margin-bottom: 10px;">
+    <summary><strong>💇‍♀️ DIY Hair Porosity Test</strong></summary>
+    <ul>
+      <li>Drop a clean strand of hair in a glass of water.</li>
+      <li>If it floats: Low porosity – use light oils like argan.</li>
+      <li>If it sinks: High porosity – use heavier oils like castor, shea butter.</li>
+      <li>Tip: Avoid protein-heavy products for high porosity hair.</li>
+    </ul>
+  </details>
+
+  <details style="margin-bottom: 10px;">
+    <summary><strong>💄 Basic Makeup Matching Tip</strong></summary>
+    <ul>
+      <li>For cool undertones: Use pinks, mauves, and cool reds.</li>
+      <li>For warm tones: Use peach, coral, and orange-based shades.</li>
+      <li>Neutral tone: Most shades suit you. Choose based on occasion.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>🌿 Desi Skincare Tip</strong></summary>
+    <ul>
+      <li>Multani mitti + rose water = perfect for oily skin.</li>
+      <li>Raw milk + honey = glow boost for dry skin.</li>
+      <li>Besan + turmeric + curd = tan removal & brightening.</li>
+    </ul>
+  </details>
+</div>
+  <footer>
+    <div style="background-color: #cc7351; color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+  <h2 style="text-align: center;">💫 Hair Care Tips </h2>
+<br>
+  <ul style="list-style-type: square; padding-left: 20px; font-size: 16px;">
+    <li><strong>Know your Hair Type:</strong> Straight, Wavy, Curly, or Coily — different types need different care.</li>
+    
+    <li><strong>Porosity Test:</strong> Take one hair strand and drop it in a glass of water - check it whether it  floats or shinks
+
+    <li><strong>Scalp Care:</strong> Dry scalp? Try coconut oil massage. Oily scalp? Use aloe vera gel or apple cider vinegar rinse.</li>
+
+    <li><strong>DIY Hair Pack:</strong> Mix curd + aloe vera + 1 vitamin E capsule → Apply for 30 mins before washing.</li>
+
+    <li><strong>Hair Wash Frequency:</strong> Dry hair? 2x a week. Oily hair? 3x a week.</li>
+
+    <li><strong>Comb tip:</strong> Use a wide-tooth wooden comb — reduces breakage.</li>
+
+    <li><strong>Never apply oil on dirty scalp!</strong> Always apply oil one day before washing for deep nourishment.</li>
+
+    <li><strong>Use silk pillowcases or braid before sleep</strong> to avoid breakage.</li>
+  </ul>
+</div>
+<hr>
+<br>
+<!-- Google Font for Stylish Look -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+<!-- Thank You Message Section -->
+<section style="text-align: center; padding: 40px 20px; background: linear-gradient(to right, #ffe0e6, #ffe8f0);">
+  <h2 style="font-family: 'Great Vibes', cursive; font-size: 40px; color: #b35c6b; margin-bottom: 10px;">
+    Thank You for Glowing with Us 💗
+  </h2>
+  <p style="font-family: 'Raleway', sans-serif; font-size: 18px; color: #444;">
+    Your journey to self-love and style means everything. Let GlowMuse guide you with confidence and care!
+  </p>
+</section>
+
+<!-- About Section HTML -->
+<div class="about-glowmuse">
+  <h2>About <span>GlowMuse</span></h2>
+  <p>
+    GlowMuse is your personalized beauty and style advisor, blending tradition with trend. From finding your perfect skin shade, shape, and tone to matching desi skincare tips with modern makeup, GlowMuse is here to make every choice effortless and elegant.
+  </p>
+  <h3>Meet the Developer</h3>
+  <p class="developer">
+    Built with love by <strong>Ananya Chaurasia</strong> – a passionate 16-year-old creative developer and content designer. Connect with her on 
+    <a href="https://www.linkedin.com/in/ananya-chaurasia-786a22373" target="_blank">LinkedIn</a> 💫
+  </p>
+</div>
+
+<!-- CSS (Add to your stylesheet or in <style> tags) -->
+<style>
+  .about-glowmuse {
+    background-color: #ffe5d9; /* Light peach */
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #5b2a1d; /* Soft brown */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .about-glowmuse h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #8b4513;
+    margin-bottom: 10px;
+  }
+
+  .about-glowmuse h2 span {
+    color: #d2691e; /* Medium peach/brown */
+  }
+
+  .about-glowmuse h3 {
+    font-size: 22px;
+    margin-top: 25px;
+    color: #a0522d;
+  }
+
+  .about-glowmuse p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .about-glowmuse .developer strong {
+    font-weight: 700;
+    color: #7b3f00;
+  }
+
+  .about-glowmuse a {
+    color: #cc6600;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .about-glowmuse a:hover {
+    text-decoration: underline;
+  }
+</style>
+<hr>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
